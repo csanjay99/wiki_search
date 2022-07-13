@@ -1,0 +1,22 @@
+{
+  "name": "wikipediasearchapp",
+  "version": "1.0.0",
+  "description": "Search Wikipedia",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/csanjay99/wiki_search.git"
+  },
+  "author": "sanjayC",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/csanjay99/wiki_search/issues"
+  },
+  "homepage": "https://github.com/csanjay99/wiki_search#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
