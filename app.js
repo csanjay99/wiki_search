@@ -1,7 +1,7 @@
 const express = require('express');
 //const { open } = require('sqlite');
 // const sqlite3 = require('sqlite3');
-// const path = require('path');
+const path = require('path');
 // const { parse } = require('path');
 // const dbPath = path.join(__dirname, 'covid19India.db');
 const app = express();
@@ -15,7 +15,7 @@ const initializeDbAndServer = async () => {
         //     driver: sqlite3.Database
         // });
 
-        app.listen(5002, () => {
+        app.listen(5008, () => {
             console.log('server running on http://localhost:5008');
         });
 
@@ -49,8 +49,11 @@ const convertDistrict = object => {
 
 app.get('/', async (req, res) => {
     try {
+        var options = {
+            root: path.join(__dirname)
+        };
         const file = `wikipediaLikeSearch.html`;
-        res.sendFile(file);
+        res.sendFile(file,options);
     } catch (err) {
         console.log(`Db fetch error : ${err.message}`)
     }
