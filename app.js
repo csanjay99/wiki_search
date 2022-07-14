@@ -51,11 +51,11 @@ const convertDistrict = object => {
 app.get('/', async (req, res) => {
     try {
         var options = {
-            root: path.join(__dirname, '\\', 'public', '\\')
+            root: path.join(__dirname)
         };
-        //console.log(options)
-        const file = `wikipediaLikeSearch.html`;
-        res.sendFile(file, options);
+        console.log(options)
+        //const file = `wikipediaLikeSearch.html`;
+        res.sendFile(__dirname + '/public/wikipediaLikeSearch.html');
     } catch (err) {
         console.log(`Db fetch error : ${err.message}`)
     }
