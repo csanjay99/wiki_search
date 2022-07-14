@@ -5,6 +5,7 @@ const path = require('path');
 // const { parse } = require('path');
 // const dbPath = path.join(__dirname, 'covid19India.db');
 const app = express();
+app.use(express.static("public"));
 // app.use(express.json());
 // let dbObj = null;
 
@@ -50,8 +51,9 @@ const convertDistrict = object => {
 app.get('/', async (req, res) => {
     try {
         var options = {
-            root: path.join(__dirname)
+            root: path.join(__dirname,'\\','public','\\')
         };
+        console.log(options)
         const file = `wikipediaLikeSearch.html`;
         res.sendFile(file,options);
     } catch (err) {
